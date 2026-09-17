@@ -1,0 +1,8 @@
+URL: https://demoqa.com/
+Status: 200
+URL: https://demoqa.com/assets/index-pe2EUVKA.css
+Status: 200
+URL: https://demoqa.com/assets/index-D_rDx8ml.js
+Status: 200
+URL: https://demoqa.com/assets/Toolsqa-DZdwt2ul.jpg
+Status: 200

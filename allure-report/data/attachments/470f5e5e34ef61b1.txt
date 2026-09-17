@@ -1,0 +1,4 @@
+Type: alert
+Message: You clicked a button
+Type: alert
+Message: This alert appeared after 5 seconds

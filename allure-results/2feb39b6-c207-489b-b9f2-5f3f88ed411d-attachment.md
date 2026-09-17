@@ -1,0 +1,53 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: mouse.spec.ts >> Double Click
+- Location: tests\mouse.spec.ts:19:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://demoqa.com/buttons", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test('Mouse Hover', async ({ page }) => {
+  4  |     await page.goto('https://demoqa.com/tool-tips');
+  5  | 
+  6  |     await page.getByRole('button', {name: 'Hover me'}).hover();
+  7  |    
+  8  |     const tooltip = page.getByTestId('tooltip');
+  9  |     await expect(tooltip).toBeVisible();
+  10 |     await expect(tooltip).toHaveText('You hovered over the Button');
+  11 | });
+  12 | 
+  13 | test('Right Click', async ({ page }) => {
+  14 |     await page.goto('https://demoqa.com/buttons');
+  15 |     await page.locator('#rightClickBtn').click({button: 'right'});
+  16 |     await expect(page.locator('#rightClickMessage')).toContainText('You have done a right click');
+  17 | });
+  18 | 
+  19 | test('Double Click', async ({ page }) => {
+> 20 |     await page.goto('https://demoqa.com/buttons');
+     |                ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  21 |     await page.locator('#doubleClickBtn').dblclick();
+  22 |     await expect(page.locator('#doubleClickMessage')).toContainText('You have done a double click');
+  23 | });
+  24 | 
+```

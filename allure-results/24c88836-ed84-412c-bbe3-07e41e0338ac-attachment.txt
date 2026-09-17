@@ -1,0 +1,3 @@
+Type: alert
+Message: You clicked a button
+Default value: 

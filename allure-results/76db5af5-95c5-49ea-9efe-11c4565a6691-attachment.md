@@ -1,0 +1,395 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: keyboard.spec.ts >> Basic Drag and Drop using dragTo on DemoQA
+- Location: tests\keyboard.spec.ts:18:5
+
+# Error details
+
+```
+Test timeout of 3000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - navigation "Main navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - link "QA Playground home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: QA Playground
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Home" [ref=e10] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e11]:
+          - link "Practice" [ref=e12] [cursor=pointer]:
+            - /url: /practice
+        - listitem [ref=e13]:
+          - link "Demo Apps" [ref=e14] [cursor=pointer]:
+            - /url: /demo
+        - listitem [ref=e15]:
+          - link "Challenges" [ref=e16] [cursor=pointer]:
+            - /url: /challenges
+        - listitem [ref=e17]:
+          - link "Blogs" [ref=e18] [cursor=pointer]:
+            - /url: /blog
+      - generic [ref=e19]:
+        - button "Switch to dark mode" [ref=e20] [cursor=pointer]
+        - link "Log in / Sign up" [ref=e24] [cursor=pointer]:
+          - /url: /auth/sign-in
+  - main [ref=e25]:
+    - generic [ref=e28]:
+      - generic [ref=e30]:
+        - navigation "Breadcrumb" [ref=e31]:
+          - generic [ref=e32]:
+            - link "Home" [ref=e33] [cursor=pointer]:
+              - /url: /
+            - generic [ref=e34]: /
+          - generic [ref=e35]:
+            - link "Practice" [ref=e36] [cursor=pointer]:
+              - /url: /practice
+            - generic [ref=e37]: /
+          - generic [ref=e38]: Drag & Drop
+        - generic [ref=e40]:
+          - heading "How to Automate Drag and Drop in Selenium and Playwright" [level=1] [ref=e41]
+          - paragraph [ref=e42]: Practice drag-and-drop automation — simple drop zones, sortable lists, kanban column transfers, type-restricted zones, and multi-column boards in Playwright, Selenium & Cypress.
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - generic [aria-hidden] [ref=e45]: "03"
+              - text: Advanced
+            - generic [ref=e46]: 20 min
+            - generic [ref=e47]: 6 scenarios
+            - generic [ref=e48]: 14 test cases
+      - generic [ref=e49]:
+        - tablist "Practice page tabs" [ref=e50]:
+          - generic [ref=e51]:
+            - tab "Practice 6" [selected] [ref=e52]:
+              - generic [ref=e55]: Practice
+              - generic [ref=e56]: "6"
+            - tab "Test Cases 14" [ref=e57]:
+              - generic [ref=e61]: Test Cases
+              - generic [ref=e62]: "14"
+            - tab "Learn" [ref=e63]
+        - tabpanel "Practice 6" [active] [ref=e67]:
+          - generic [ref=e69]:
+            - region "Interactive Scenarios" [ref=e70]:
+              - paragraph [ref=e71]: Interactive Scenarios
+              - generic [ref=e72]:
+                - generic [ref=e73]:
+                  - generic [ref=e74]:
+                    - generic [ref=e75]: S01
+                    - generic [ref=e76]: "Scenario 1: Drag Item to Drop Zone (Beginner)"
+                  - generic [ref=e78]:
+                    - generic [ref=e79]:
+                      - paragraph [ref=e80]: Drag the item into the drop zone.
+                      - generic "Drop zone" [ref=e82]: 📦 Item dropped ✓
+                      - button "↺ Reset" [ref=e83] [cursor=pointer]
+                    - generic [ref=e84]: Item dropped into zone ✓
+                    - button "💡 Show Hint" [ref=e85]
+                - generic [ref=e86]:
+                  - generic [ref=e87]:
+                    - generic [ref=e88]: S02
+                    - generic [ref=e89]: "Scenario 2: Drag to Correct Labelled Zone (Medium)"
+                  - generic [ref=e91]:
+                    - generic [ref=e92]:
+                      - paragraph [ref=e93]: Drag each card to its matching zone. Cards show which zone they belong to.
+                      - generic [ref=e94]:
+                        - generic [ref=e95]:
+                          - generic "Card Alpha — drop into zone-a" [ref=e96]:
+                            - text: Alpha
+                            - generic [ref=e97]: → zone-a
+                          - generic "Card Beta — drop into zone-b" [ref=e98]:
+                            - text: Beta
+                            - generic [ref=e99]: → zone-b
+                          - generic "Card Gamma — drop into zone-c" [ref=e100]:
+                            - text: Gamma
+                            - generic [ref=e101]: → zone-c
+                        - generic [ref=e102]:
+                          - generic "Drop zone zone-a" [ref=e103]:
+                            - generic [ref=e104]: Zone A
+                            - text: Drop here
+                          - generic "Drop zone zone-b" [ref=e105]:
+                            - generic [ref=e106]: Zone B
+                            - text: Drop here
+                          - generic "Drop zone zone-c" [ref=e107]:
+                            - generic [ref=e108]: Zone C
+                            - text: Drop here
+                      - button "↺ Reset" [ref=e109] [cursor=pointer]
+                    - generic [ref=e110]: No card dropped
+                    - button "💡 Show Hint" [ref=e111]
+                - generic [ref=e112]:
+                  - generic [ref=e113]:
+                    - generic [ref=e114]: S03
+                    - generic [ref=e115]: "Scenario 3: Reorder a Sortable List (Medium)"
+                  - generic [ref=e117]:
+                    - generic [ref=e118]:
+                      - paragraph [ref=e119]:
+                        - text: Drag items to reorder the list. Each item has
+                        - code [ref=e120]: data-item-id
+                        - text: — use it as the locator anchor.
+                      - list "Sortable framework list" [ref=e121]:
+                        - 'listitem "Sort item: Playwright" [ref=e122]':
+                          - generic [aria-hidden] [ref=e123]: ⠿
+                          - text: Playwright
+                        - 'listitem "Sort item: Cypress" [ref=e124]':
+                          - generic [aria-hidden] [ref=e125]: ⠿
+                          - text: Cypress
+                        - 'listitem "Sort item: Selenium" [ref=e126]':
+                          - generic [aria-hidden] [ref=e127]: ⠿
+                          - text: Selenium
+                        - 'listitem "Sort item: WebdriverIO" [ref=e128]':
+                          - generic [aria-hidden] [ref=e129]: ⠿
+                          - text: WebdriverIO
+                        - 'listitem "Sort item: Puppeteer" [ref=e130]':
+                          - generic [aria-hidden] [ref=e131]: ⠿
+                          - text: Puppeteer
+                      - button "↺ Reset order" [ref=e132] [cursor=pointer]
+                    - generic [ref=e133]: List not reordered
+                    - button "💡 Show Hint" [ref=e134]
+                - generic [ref=e135]:
+                  - generic [ref=e136]:
+                    - generic [ref=e137]: S04
+                    - generic [ref=e138]: "Scenario 4: Kanban Column Transfer (Hard)"
+                  - generic [ref=e140]:
+                    - generic [ref=e141]:
+                      - paragraph [ref=e142]:
+                        - text: Column headings have
+                        - strong [ref=e143]: "no"
+                        - code [ref=e144]: data-testid
+                        - text: . Scope via
+                        - code [ref=e145]: data-column-id
+                        - text: then find
+                        - code [ref=e146]: data-task-id
+                        - text: .
+                      - generic [ref=e147]:
+                        - generic [ref=e148]:
+                          - heading "Todo 3" [level=3] [ref=e149]:
+                            - text: Todo
+                            - generic [ref=e150]: "3"
+                          - generic [ref=e151]:
+                            - 'generic "Task: Write login tests" [ref=e152]': Write login tests
+                            - 'generic "Task: Automate checkout flow" [ref=e153]': Automate checkout flow
+                            - 'generic "Task: Set up CI pipeline" [ref=e154]': Set up CI pipeline
+                        - generic [ref=e155]:
+                          - heading "Done 1" [level=3] [ref=e156]:
+                            - text: Done
+                            - generic [ref=e157]: "1"
+                          - 'generic "Task: Refactor page objects" [ref=e159]': Refactor page objects
+                      - button "↺ Reset board" [ref=e160] [cursor=pointer]
+                    - generic [ref=e161]: No task moved
+                    - button "💡 Show Hint" [ref=e162]
+                - generic [ref=e163]:
+                  - generic [ref=e164]:
+                    - generic [ref=e165]: S05
+                    - generic [ref=e166]: "Scenario 5: Type-Restricted Drop Zones (Hard)"
+                    - generic [ref=e167]: HARD
+                  - generic [ref=e169]:
+                    - generic [ref=e170]:
+                      - paragraph [ref=e171]:
+                        - text: Zones only accept their matching shape type. Rejection feedback has
+                        - strong [ref=e172]: "no"
+                        - code [ref=e173]: data-testid
+                        - text: — locate via
+                        - code [ref=e174]: role="status"
+                        - text: .
+                      - generic [ref=e175]:
+                        - generic [ref=e176]:
+                          - generic "Draggable Circle" [ref=e177]:
+                            - generic [ref=e178]: ●
+                            - generic [ref=e179]: Circle
+                          - generic "Draggable Square" [ref=e180]:
+                            - generic [ref=e181]: ■
+                            - generic [ref=e182]: Square
+                          - generic "Draggable Triangle" [ref=e183]: Triangle
+                        - generic [ref=e187]:
+                          - generic "Zone for Circle" [ref=e188]:
+                            - generic [ref=e189]: Circle only
+                            - text: Drop here
+                          - generic "Zone for Square" [ref=e190]:
+                            - generic [ref=e191]: Square only
+                            - text: Drop here
+                          - generic "Zone for Triangle" [ref=e192]:
+                            - generic [ref=e193]: Triangle only
+                            - text: Drop here
+                      - button "↺ Reset shapes" [ref=e194] [cursor=pointer]
+                    - generic [ref=e195]: No drop attempted
+                    - button "💡 Show Hint" [ref=e196]
+                - generic [ref=e197]:
+                  - generic [ref=e198]:
+                    - generic [ref=e199]: S06
+                    - generic [ref=e200]: "Scenario 6: Multi-Column Board (Challenge)"
+                    - generic [ref=e201]: CHALLENGE
+                  - generic [ref=e203]:
+                    - generic [ref=e204]:
+                      - paragraph [ref=e205]:
+                        - text: Some cards have no
+                        - code [ref=e206]: data-testid
+                        - text: . Find them via
+                        - code [ref=e207]: aria-label
+                        - text: or
+                        - code [ref=e208]: "getByRole('article',{ name: /Fix login/ })"
+                        - text: .
+                      - generic [ref=e209]:
+                        - generic [ref=e210]:
+                          - generic [ref=e211]: Backlog
+                          - generic [ref=e212]:
+                            - 'article "Board card: Write API tests" [ref=e213]': Write API tests
+                            - 'article "Board card: Fix login bug" [ref=e214]': Fix login bug
+                        - generic [ref=e215]:
+                          - generic [ref=e216]: In Progress
+                          - generic [ref=e217]:
+                            - 'article "Board card: Refactor selectors" [ref=e218]': Refactor selectors
+                            - 'article "Board card: Review PR #42" [ref=e219]': "Review PR #42"
+                        - generic [ref=e220]:
+                          - generic [ref=e221]: Done
+                          - 'article "Board card: Deploy to staging" [ref=e223]': Deploy to staging
+                      - button "↺ Reset board" [ref=e224] [cursor=pointer]
+                    - generic [ref=e225]: Board untouched
+                    - button "💡 Show Hint" [ref=e226]
+            - complementary [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]:
+                  - generic [ref=e230]: Your Progress
+                  - generic [ref=e231]: 1 / 6
+                - progressbar "Practice progress" [ref=e233]
+                - generic [ref=e234]:
+                  - generic [ref=e235]:
+                    - generic [aria-hidden] [ref=e236]: ✓
+                    - generic [ref=e237]: "Scenario 1: Drag Item to Drop Zone (Beginner)"
+                  - generic [ref=e238]:
+                    - generic [aria-hidden] [ref=e239]: ✓
+                    - generic [ref=e240]: "Scenario 2: Drag to Correct Labelled Zone (Medium)"
+                  - generic [ref=e241]:
+                    - generic [aria-hidden] [ref=e242]: ✓
+                    - generic [ref=e243]: "Scenario 3: Reorder a Sortable List (Medium)"
+                  - generic [ref=e244]:
+                    - generic [aria-hidden] [ref=e245]: ✓
+                    - generic [ref=e246]: "Scenario 4: Kanban Column Transfer (Hard)"
+                  - generic [ref=e247]:
+                    - generic [aria-hidden] [ref=e248]: ✓
+                    - generic [ref=e249]: "Scenario 5: Type-Restricted Drop Zones (Hard)"
+                  - generic [ref=e250]:
+                    - generic [aria-hidden] [ref=e251]: ✓
+                    - generic [ref=e252]: "Scenario 6: Multi-Column Board (Challenge)"
+              - generic [ref=e253]:
+                - generic [ref=e254]: What You'll Learn
+                - generic [ref=e259]:
+                  - generic [ref=e260]:
+                    - button "Selenium" [ref=e261]
+                    - button "Playwright" [ref=e262]
+                    - button "Cypress" [ref=e263]
+                  - generic [ref=e264]:
+                    - generic [ref=e265]: Selenium (Java)
+                    - list [ref=e266]:
+                      - listitem [ref=e267]:
+                        - code [ref=e269]: Actions.dragAndDrop(src, tgt)
+                      - listitem [ref=e270]:
+                        - code [ref=e272]: Actions.clickAndHold(src)
+                      - listitem [ref=e273]:
+                        - code [ref=e275]: Actions.moveToElement(tgt)
+                      - listitem [ref=e276]:
+                        - code [ref=e278]: Actions.release().perform()
+                      - listitem [ref=e279]:
+                        - code [ref=e281]: JS dragAndDrop() fallback
+                  - generic [ref=e282]: Tutorial video coming soon
+              - link "🖼️ iFrames Switch into nested iframes and interact with embedded content ›" [ref=e289] [cursor=pointer]:
+                - /url: /practice/iframes
+                - generic [ref=e290]: 🖼️
+                - generic [ref=e291]:
+                  - generic [ref=e292]: iFrames
+                  - generic [ref=e293]: Switch into nested iframes and interact with embedded content
+                - generic [ref=e294]: ›
+  - contentinfo [ref=e295]:
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - generic [ref=e298]:
+          - link "QA Playground home" [ref=e299] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e301]: QA Playground
+          - paragraph [ref=e302]: A purpose-built platform for QA engineers. Learn Selenium, Playwright and Cypress through practice on real UI elements, demo apps. Rehearse interviews with AI agents, and track every job application through to the offer.
+          - list "Social links" [ref=e303]:
+            - listitem [ref=e304]:
+              - link "YouTube" [ref=e305] [cursor=pointer]:
+                - /url: https://youtube.com
+            - listitem [ref=e308]:
+              - link "GitHub" [ref=e309] [cursor=pointer]:
+                - /url: https://github.com/kundalik-dev
+            - listitem [ref=e312]:
+              - link "X / Twitter" [ref=e313] [cursor=pointer]:
+                - /url: https://x.com
+            - listitem [ref=e316]:
+              - link "Telegram" [ref=e317] [cursor=pointer]:
+                - /url: https://t.me
+        - generic [ref=e320]:
+          - generic [ref=e321]: Platform
+          - list [ref=e322]:
+            - listitem [ref=e323]:
+              - link "Practice Elements" [ref=e324] [cursor=pointer]:
+                - /url: /practice
+            - listitem [ref=e325]:
+              - link "AI Mock Interviews" [ref=e326] [cursor=pointer]:
+                - /url: /interview-practice
+            - listitem [ref=e327]:
+              - link "Job Hub & CRM" [ref=e328] [cursor=pointer]:
+                - /url: /job-crm
+            - listitem [ref=e329]:
+              - link "Bank Demo" [ref=e330] [cursor=pointer]:
+                - /url: /demo/bank
+            - listitem [ref=e331]:
+              - link "Dashboard" [ref=e332] [cursor=pointer]:
+                - /url: /dashboard
+            - listitem [ref=e333]:
+              - link "QA Tools" [ref=e334] [cursor=pointer]:
+                - /url: /qa-tools
+        - generic [ref=e335]:
+          - generic [ref=e336]: Learn
+          - list [ref=e337]:
+            - listitem [ref=e338]:
+              - link "Blog & Tutorials" [ref=e339] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e340]:
+              - link "Resources" [ref=e341] [cursor=pointer]:
+                - /url: /resources
+            - listitem [ref=e342]:
+              - link "Interview Questions" [ref=e343] [cursor=pointer]:
+                - /url: /interview-questions
+            - listitem [ref=e344]:
+              - link "Automation Framework" [ref=e345] [cursor=pointer]:
+                - /url: https://github.com/kundalik5545/QA_PlayGround_Automation_Framework
+        - generic [ref=e346]:
+          - generic [ref=e347]: Company
+          - list [ref=e348]:
+            - listitem [ref=e349]:
+              - link "About Us" [ref=e350] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e351]:
+              - link "Contact" [ref=e352] [cursor=pointer]:
+                - /url: /contact-us
+            - listitem [ref=e353]:
+              - link "Report an Issue" [ref=e354] [cursor=pointer]:
+                - /url: https://github.com/kundalik-dev/qaplayground-support/issues
+            - listitem [ref=e355]:
+              - link "Privacy Policy" [ref=e356] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=e357]:
+              - link "Login" [ref=e358] [cursor=pointer]:
+                - /url: /auth/sign-in
+      - generic [ref=e359]:
+        - generic [ref=e360]:
+          - text: © 2026 QA Playground. Built by
+          - link "Kundalik Jadhav" [ref=e361] [cursor=pointer]:
+            - /url: https://github.com/kundalik-dev
+          - text: "- Pune, India 🇮🇳"
+        - generic [ref=e362]: All rights reserved.
+  - alert [ref=e363]
+  - button "Send feedback or report an issue" [ref=e364] [cursor=pointer]
+```

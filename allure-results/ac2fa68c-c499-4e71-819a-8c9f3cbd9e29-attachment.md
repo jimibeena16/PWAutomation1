@@ -1,0 +1,57 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: window.spec.ts >> Handle new window
+- Location: tests\window.spec.ts:21:5
+
+# Error details
+
+```
+Test timeout of 3000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link [ref=e4] [cursor=pointer]:
+      - /url: https://demoqa.com
+  - generic [ref=e8]:
+    - generic [ref=e11]:
+      - generic [ref=e12]: Elements
+      - generic [ref=e24]: Forms
+      - generic [ref=e37]:
+        - generic [ref=e38] [cursor=pointer]: Alerts, Frame & Windows
+        - list [ref=e50]:
+          - listitem [ref=e51] [cursor=pointer]:
+            - link "Browser Windows" [ref=e52]:
+              - /url: /browser-windows
+          - listitem [ref=e55] [cursor=pointer]:
+            - link "Alerts" [ref=e56]:
+              - /url: /alerts
+          - listitem [ref=e59] [cursor=pointer]:
+            - link "Frames" [ref=e60]:
+              - /url: /frames
+          - listitem [ref=e63] [cursor=pointer]:
+            - link "Nested Frames" [ref=e64]:
+              - /url: /nestedframes
+          - listitem [ref=e67] [cursor=pointer]:
+            - link "Modal Dialogs" [ref=e68]:
+              - /url: /modal-dialogs
+      - generic [ref=e71]: Widgets
+      - generic [ref=e84]: Interactions
+      - generic [ref=e96]: Book Store Application
+    - generic [ref=e109]:
+      - heading "Browser Windows" [level=1] [ref=e110]
+      - button "New Tab" [ref=e112] [cursor=pointer]
+      - button "New Window" [active] [ref=e114] [cursor=pointer]
+      - button "New Window Message" [ref=e116] [cursor=pointer]
+  - contentinfo [ref=e123]:
+    - generic [ref=e124]: © 2013-2026 TOOLSQA.COM | ALL RIGHTS RESERVED.
+```

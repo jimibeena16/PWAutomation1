@@ -1,0 +1,16 @@
+URL: https://demoqa.com/
+Method: GET
+URL: https://demoqa.com/assets/index-D_rDx8ml.js
+Method: GET
+URL: https://demoqa.com/assets/index-pe2EUVKA.css
+Method: GET
+URL: https://demoqa.com/assets/Toolsqa-DZdwt2ul.jpg
+Method: GET
+URL: https://demoqa.com/assets/WB-u-E_TRWX.svg
+Method: GET
+URL: https://demoqa.com/assets/gplaypattern-DtLXoPaW.jpg
+Method: GET
+URL: https://www.googletagmanager.com/gtm.js?id=GTM-MX8DD4S
+Method: GET
+URL: https://demoqa.com/vite.svg
+Method: GET
